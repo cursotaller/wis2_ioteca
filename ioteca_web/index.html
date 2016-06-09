@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Angular demo </title>
+</head>
+
+<body>
+    <div>
+        <br />
+        <input ng-model="precio" />
+        <br />
+        <input type="number" name="cantidad" ng-model="cantidad" />
+        <br/>
+        <br/> Total: {{ precio * cantidad }}
+    </div>
+    <script src="bower_components/angular/angular.min.js"></script>
+</body>
+
+</html>

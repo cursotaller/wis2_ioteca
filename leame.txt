@@ -1,0 +1,44 @@
+COMANDOS
+==========
+
+General:
+------------
+D:\>md cursotaller
+D:\>cd cursotaller
+D:\cursotaller o XXX>git clone https://github.com/cursotaller/wis2_ioteca.git
+D:\cursotaller o XXX>git pull
+
+git clean -d -x -i
+	luego opcion 4
+mejor: 
+git clean -d -i
+
+D:\cursotaller o XXX>git config --global user.email "tumail@gmail.com"
+D:\cursotaller o XXX>git config --global user.name "tu nombre"
+
+Client web:
+------------
+D:\cursotaller o XXX\wis2_ioteca\ioteca_web>bower install
+
+D:\cursotaller o XXX\wis2_ioteca>npm install
+D:\cursotaller o XXX\wis2_ioteca>gulp serve
+[09:22:36] Using gulpfile D:\cursotaller o XXX\wis2_ioteca\gulpfile.js
+[09:22:36] Starting 'serve'...
+[09:22:36] Finished 'serve' after 93 ms
+[09:22:36] Server started http://localhost:8001
+
+// para instalar gulp
+D:\cursotaller o XXX\wis2_ioteca>npm install -g gulp 
+
+
+Servidor API REST:
+-----------------------
+D:\cursotaller o XXX\wis2_ioteca\virtualenv ve_ioteca
+// para instalar virutalenv
+D:\cursotaller o XXX\wis2_ioteca\pip install virtualenv
+
+(ve_ioteca) D:\cursotaller o XXX\wis2_ioteca\ioteca_service>pip install -r reqs.txt
+(ve_ioteca) D:\cursotaller o XXX\wis2_ioteca\ioteca_service>manage.py runserver
+
+// USER : admin
+// PASSWORD : 12345
