@@ -1,67 +1,26 @@
-<div ng-cloak>
-    <md-content class="md-padding" layout-xs="column">
-        <div flex-xs flex-gt-xs>
-            <md-card ng-controller="CategoriaCtrl">
-                <md-card-title>
-                    <md-card-title-text>
-                        <span class="md-headline">Trabajar con Categorías</span>
-                        <span class="md-subhead">CRUD categoría</span>
-                    </md-card-title-text>
-                </md-card-title>
-                <md-divider></md-divider>
-                <md-card-actions layout="row" layout-align="start center" layout-xs="column">
-                    <md-card-icon-actions>
-                    <!--
-                        <md-button class="md-fab md-mini md-primary" aria-label="Add" ng-click="new($event)">
-                            <ng-md-icon icon="add" aria-label="title"></ng-md-icon>
-                        </md-button>
-                    -->
-                        <md-button class="md-icon-button" aria-label="Add" ng-click="new($event)">
-                            <md-tooltip md-autohide>Add</md-tooltip>
-                            <ng-md-icon icon="add" aria-label="Add"></ng-md-icon>
-                        </md-button>
-                    </md-card-icon-actions>
-                    <span flex></span>
-                    <md-card-icon-actions layout-align="end center">
-                        <input placeholder="buscar" ng-model="query" ng-keyup="list()">
-                        <md-button class="md-icon-button" aria-label="Share">
-                            <ng-md-icon icon="more_vert" aria-label="title"></ng-md-icon>
-                        </md-button>
-                    </md-card-icon-actions>
-                </md-card-actions>
-                <md-divider></md-divider>
-                <md-table-container>
-                <table md-table data-md-row-select="">
-                    <thead md-head>
-                        <tr md-row>
-                            <th md-column>#</th>
-                            <th md-column md:order:by="name">nombre</th>
-                            <th md-column>codigo</th>
-                            <th md-column colspan='2' align='center'>acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody md-body>
-                        <tr md-row ng-repeat="d in lista">
-                            <td md-cell> {{ d.num }} </td>
-                            <td md-cell> {{ d.nombre }} </td>
-                            <td md-cell> {{ d.codigo }} </td>
-                            <td md-cell>
-                                <md-button class="md-icon-button" aria-label="Edit" ng-click="sel(d)">
-                                <md-tooltip md-autohide>Edit {{ d.codigo }}</md-tooltip>
-                                    <ng-md-icon icon="edit" aria-label="Edit"></ng-md-icon>
-                                </md-button>
-                            </td>
-                            <td md-cell>
-                                <md-button class="md-icon-button" aria-label="delete" ng-click="delete(d)">
-                                    <md-tooltip md-autohide>Delete {{ d.codigo }}</md-tooltip>
-                                    <ng-md-icon icon="delete" aria-label="delete"></ng-md-icon>
-                                </md-button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                </md-table-container>
-            </md-card>
-        </div>
-    </md-content>
+<br>
+<span>Trabajar con Categorias</span>
+<div ng-controller="CategoriaCtrl">
+    <a href="" ng-click="new($event)">Nueva Categoria</a>
+    <br> categoriaId={{categoria.id}}
+    <br>
+    <input type="text" ng-model="categoria.nombre" placeholder="Nombre">
+    <br>
+    <input type="text" ng-model="categoria.codigo" placeholder="Código">
+    <input type="button" ng-click="save()" value="Save">
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Código</th>
+            <th colspan="2">Actions</th>
+        </tr>
+        <tr ng-repeat="d in lista">
+            <td>{{ $index +1 }}</td>
+            <td>{{ d.nombre }}</td>
+            <td>{{ d.codigo }}</td>
+            <td> <a href="" ng-click="sel(d)">Edit</a></td>
+            <td> <a href="" ng-click="delete(d)">x</a></td>
+        </tr>
+    </table>
 </div>

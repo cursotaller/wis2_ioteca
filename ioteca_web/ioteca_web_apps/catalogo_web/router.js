@@ -10,12 +10,20 @@ angular.module('app')
     $stateProvider
 
     //==================================
+    // catalogo page template: '<div ui-view ></div>'
+    //==================================
+        .state('catalogo', {
+        url: '/catalogo',
+        template: '<div ui-view ></div>'
+    })
+
+    //==================================
     // test1 page
     //==================================
-        .state("test1", {
-        url: "/test1",
-        data: { section: 'UI', page: 'Test 1' },
-        templateUrl: "ioteca_web_apps/ui_web/views/test1/form.html"
+    .state("catalogo.categoria", {
+        url: "/categoria",
+        data: { section: 'Catálogo', page: 'Categoría' },
+        templateUrl: "ioteca_web_apps/catalogo_web/views/categoria/index.html"
     });
 
 });

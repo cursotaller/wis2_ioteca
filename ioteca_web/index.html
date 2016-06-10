@@ -3,11 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <title> Angular demo </title>
+    <title ng-bind="$state.current.data.section + ($state.current.data.section === Null ? '' : ' > ') +
+        $state.current.data.page"> Angular demo </title>
 </head>
 
 <body>
-    <a ui-sref="test1">Test1</a>
+    <a ui-sref="test1">Test1</a> | 
+    <a ui-sref="catalogo.categoria">Categoría</a>
+    <hr> Ud está en:
+    <span ng-bind="$state.current.data.section"></span>
+    <span ng-if="$state.current.data.section"> > </span>
+    <span ng-bind="$state.current.data.page"></span>
+    <br>
     <div ui-view ng-controller="AppCtrl"></div>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
@@ -17,6 +24,10 @@
     <script src="app/controllers/app.js"></script>
     <script src="ioteca_web_apps/ui_web/router.js"></script>
     <script src="ioteca_web_apps/ui_web/controllers/test1.js"></script>
+    <script src="ioteca_web_apps/catalogo_web/config.js"></script>
+    <script src="ioteca_web_apps/catalogo_web/router.js"></script>
+    <script src="ioteca_web_apps/catalogo_web/services/api.js"></script>
+    <script src="ioteca_web_apps/catalogo_web/controllers/categoria.js"></script>
 </body>
 
 </html>
