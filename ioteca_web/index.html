@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="">
+<html lang="en" ng-app="app">
 
 <head>
     <meta charset="UTF-8">
@@ -7,15 +7,36 @@
 </head>
 
 <body>
-    <div>
+    <div ng-controller="AppCtrl">
         <br />
-        <input ng-model="precio" />
+        <input ng-model="precio" ng-change="track()" />
         <br />
-        <input type="number" name="cantidad" ng-model="cantidad" />
+        <input type="number" ng-model="cantidad" ng-change="track()" />
         <br/>
         <br/> Total: {{ precio * cantidad }}
     </div>
     <script src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript">
+    //==================================
+    // settings app angular
+    //==================================
+    angular.module('app', [])
+
+    //==================================
+    // app class controller
+    //==================================
+    .controller('AppCtrl', function($scope) {
+        $scope.precio = 12;
+        $scope.cantidad = 2;
+
+        $scope.track = function() {
+            console.log('==\nprecio=' + $scope.precio);
+            console.log('cantidad=' + $scope.cantidad);
+        }
+    })
+
+    ;
+    </script>
 </body>
 
 </html>
