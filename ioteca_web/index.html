@@ -7,36 +7,15 @@
 </head>
 
 <body>
-    <div ng-controller="AppCtrl">
-        <br />
-        <input ng-model="precio" ng-change="track()" />
-        <br />
-        <input type="number" ng-model="cantidad" ng-change="track()" />
-        <br/>
-        <br/> Total: {{ precio * cantidad }}
-    </div>
+    <a ui-sref="test1">Test1</a>
+    <div ui-view ng-controller="AppCtrl"></div>
     <script src="bower_components/angular/angular.min.js"></script>
-    <script type="text/javascript">
-    //==================================
-    // settings app angular
-    //==================================
-    angular.module('app', [])
-
-    //==================================
-    // app class controller
-    //==================================
-    .controller('AppCtrl', function($scope) {
-        $scope.precio = 12;
-        $scope.cantidad = 2;
-
-        $scope.track = function() {
-            console.log('==\nprecio=' + $scope.precio);
-            console.log('cantidad=' + $scope.cantidad);
-        }
-    })
-
-    ;
-    </script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="app/settings.js"></script>
+    <script src="app/router.js"></script>
+    <script src="app/controllers/app.js"></script>
+    <script src="ioteca_web_apps/ui_web/router.js"></script>
+    <script src="ioteca_web_apps/ui_web/controllers/test1.js"></script>
 </body>
 
 </html>
