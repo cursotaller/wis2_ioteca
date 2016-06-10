@@ -1,0 +1,54 @@
+
+
+
+<md-dialog aria-label="Form" ng-cloak class="main"  md-theme="{{ dynamicTheme }}">
+    <!-- prepare merge -->
+	<!-- asullom merge -->
+    <form name='myform'>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Categoria {{categoria.id}}</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <ng-md-icon icon="close" aria-label="Close dialog"></ng-md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Name</label>
+                        <input ng-model="categoria.nombre" required>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>codigo</label>
+                        <input ng-model="categoria.codigo">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <md-checkbox ng-model="categoria.estado" aria-label="Estado">
+                            Activo
+                        </md-checkbox>
+                    </md-input-container>
+                </div>
+                <md-button class="md-fab md-mini md-primary" aria-label="Add" ng-click="new($event)">
+                            <ng-md-icon icon="add" aria-label="title"></ng-md-icon>
+                        </md-button>
+
+
+
+
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+    
+            <span flex></span>
+            <md-button type="reset" ng-click="cancel()" class="md-raised">Cancel</md-button>
+            <md-button type="submit" ng-click="save()" class="md-raised md-primary" ng-disabled="!myform.$valid">
+                guardar
+            </md-button>
+
+
+        </md-dialog-actions>
+    </form>
+</md-dialog>
