@@ -40,7 +40,7 @@ D:\cursotaller o XXX\wis2_ioteca>ve_ioteca\Scripts\activate
 
 (ve_ioteca) D:\cursotaller\wis2_ioteca>
 
-(ve_ioteca) D:\cursotaller o XXX\wis2_ioteca\ioteca_service>pip install -r reqs.txt
+(ve_ioteca) D:\cursotaller o XXX\wis2_ioteca\ioteca_service>pip install -r requirements.txt
 (ve_ioteca) D:\cursotaller o XXX\wis2_ioteca\ioteca_service>manage.py runserver
 
 // USER : admin

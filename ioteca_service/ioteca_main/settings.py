@@ -39,7 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'django.contrib.admindocs',
+    'rest_framework',
+    'corsheaders',
+
+
     'ioteca_service_apps.catalogo',
+    'ioteca_service_apps.catalogo_api',
 
 ]
 
@@ -54,6 +59,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     'django.contrib.admindocs.middleware.XViewMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 
 ]
 
@@ -128,3 +134,27 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+"""
+customize variables
+"""
+
+"""
+cambiando el modelo User
+"""
+# AUTH_USER_MODEL = 'auths.User'  # added
+
+
+"""
+corsheaders security para angular u otro cliente que ingresa desde otro ip/port
+"""
+CORS_ORIGIN_ALLOW_ALL = True  # False
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_WHITELIST = ('127.0.0.1:8001', 'localhost:8001')
+
+"""
+media
+"""
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
