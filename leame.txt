@@ -6,12 +6,12 @@ General:
 D:\>md cursotaller
 D:\>cd cursotaller
 D:\cursotaller o XXX>git clone https://github.com/cursotaller/wis2_ioteca.git
-D:\cursotaller o XXX>git pull
-
-git clean -d -x -i
-	luego opcion 4
-mejor: 
-git clean -d -i
+D:\cursotaller o XXX>cd wis2_ioteca
+D:\cursotaller o XXX\wis2_ioteca>git pull
+D:\cursotaller\wis2_ioteca>git checkout -f master
+D:\cursotaller\wis2_ioteca>git clean -d -i
+luego opcion 4, o también
+D:\cursotaller\wis2_ioteca>git clean -d -x -i
 
 D:\cursotaller o XXX>git config --global user.email "tumail@gmail.com"
 D:\cursotaller o XXX>git config --global user.name "tu nombre"
@@ -36,6 +36,9 @@ Servidor API REST:
 D:\cursotaller o XXX\wis2_ioteca\virtualenv ve_ioteca
 // para instalar virutalenv
 D:\cursotaller o XXX\wis2_ioteca\pip install virtualenv
+D:\cursotaller o XXX\wis2_ioteca>ve_ioteca\Scripts\activate
+
+(ve_ioteca) D:\cursotaller\wis2_ioteca>
 
 (ve_ioteca) D:\cursotaller o XXX\wis2_ioteca\ioteca_service>pip install -r reqs.txt
 (ve_ioteca) D:\cursotaller o XXX\wis2_ioteca\ioteca_service>manage.py runserver

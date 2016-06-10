@@ -1,5 +1,5 @@
 *.pyc
-ve_*
+*ve_*
 *- copia*
 *node_modules
 *bower_components
